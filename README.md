@@ -1,3 +1,6 @@
+`deface "cropped_sample.mp4" --output "cropped_sample_anonymized.mp4" --keep-audio --mask-scale 2 --thresh 0.1 --draw-scores --execution-provider CUDAExecutionProvider`
+
+
 [![PyPI](https://img.shields.io/pypi/v/deface)](https://pypi.org/project/deface/) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ORB-HD/deface/python-publish.yml)](https://github.com/ORB-HD/deface/actions)
 
 # `deface`: Video anonymization by face detection

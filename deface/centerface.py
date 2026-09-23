@@ -45,6 +45,14 @@ class CenterFace:
         elif self.backend == 'onnxrt':
             import onnx
             import onnxruntime
+            
+            
+            # Preload CUDA/cuDNN DLLs installed through the NVIDIA Python packages.
+            # This is needed on Windows with recent onnxruntime-gpu versions,
+            # because Deface otherwise tries to load the CUDA provider before
+            # these DLLs have been made available to the Windows DLL loader.
+            onnxruntime.preload_dlls(directory="")
+
 
             # Silence warnings about unnecessary bn initializers
             onnxruntime.set_default_logger_severity(3)
